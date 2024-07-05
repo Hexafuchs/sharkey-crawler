@@ -3,11 +3,11 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name =  ":package_name"
+name =  "sharkey-crawler"
 authors = [
-    {name = ":author_name", email = "author@domain.com"},
+    {name = "Leo", email = "leo@hexafuchs.de"},
 ]
-description = ":package_description"
+description = "Python library to crawl user data from sharkey instances"
 readme = "README.md"
 # https://pypi.org/classifiers/
 classifiers = [
@@ -48,12 +48,12 @@ test = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/Hexafuchs/:package_name/tree/main#readme"
-Source = "https://github.com/Hexafuchs/:package_name"
-Tracker = "https://github.com/Hexafuchs/:package_name/issues"
+Documentation = "https://github.com/Hexafuchs/sharkey-crawler/tree/main#readme"
+Source = "https://github.com/Hexafuchs/sharkey-crawler"
+Tracker = "https://github.com/Hexafuchs/sharkey-crawler/issues"
 
 [tool.flit.module]
-name = ":package_slug"
+name = "sharkey_crawler"
 
 [tool.bandit]
 exclude_dirs = ["build", "dist", "tests", "scripts"]

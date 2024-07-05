@@ -7,7 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   python_package.main
+   sharkey_crawler.main
 
 Submodules
 ----------
@@ -15,7 +15,7 @@ Submodules
 python\_package.setup module
 ----------------------------
 
-.. automodule:: python_package.setup
+.. automodule:: sharkey_crawler.setup
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ python\_package.setup module
 Module contents
 ---------------
 
-.. automodule:: python_package
+.. automodule:: sharkey_crawler
    :members:
    :undoc-members:
    :show-inheritance:

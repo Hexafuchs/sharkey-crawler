@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath("../src/"))
 
 # -- Project information -----------------------------------------------------
 
-project = ":package_slug docs"
+project = "sharkey_crawler docs"
 copyright = "2024, Hexafuchs"
 author = "Hexafuchs"
 

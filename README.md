@@ -1,20 +1,11 @@
-# :package_description
+# Python library to crawl user data from sharkey instances
 
-[![Latest Version on PyPI](https://img.shields.io/pypi/pyversions/:package_name?style=flat-square)](https://pypi.org/project/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/:package_name/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hexafuchs/:package_name/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/:package_name/fix-python-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexafuchs/:package_name/actions?query=workflow%3A"Fix+Python+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/pypi/dm/:package_name.svg?style=flat-square)](https://pypi.org/project/:package_name)
+[![Latest Version on PyPI](https://img.shields.io/pypi/pyversions/sharkey-crawler?style=flat-square)](https://pypi.org/project/sharkey-crawler)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/sharkey-crawler/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hexafuchs/sharkey-crawler/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/sharkey-crawler/fix-python-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexafuchs/sharkey-crawler/actions?query=workflow%3A"Fix+Python+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/pypi/dm/sharkey-crawler.svg?style=flat-square)](https://pypi.org/project/sharkey-crawler)
 
-<!--delete-->
-This repo can be used to scaffold a Python package. Unless you are a member of Hexafuchs, please use the
-[Original Template by Microsoft](https://github.com/microsoft/python-package-template).
 
-Follow these steps to get started:
-
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Have fun creating your package.
-<!--/delete-->
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -23,13 +14,13 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via poetry (or another tool of your choosing that is capable to use pyproject.toml):
 
 ```bash
-poetry add :package_name
+poetry add sharkey-crawler
 ```
 
 ## Usage
 
 ```php
-import :package_slug
+import sharkey_crawler
 ```
 
 ## Testing
