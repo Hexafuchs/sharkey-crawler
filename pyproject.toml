@@ -23,6 +23,7 @@ classifiers = [
 requires-python = ">=3.10.0"
 dynamic = ["version"]
 dependencies = [
+    "requests==2.32.3",
     "pydantic==2.8.2"
 ]
 
