@@ -20,23 +20,23 @@ SharkeyId = str
 
 class SharkeyServer:
     def __init__(self, base_url: str):
-        self.base_url = base_url.rstrip('/')
-        if not self.base_url.startswith('http://') and not self.base_url.startswith('https://'):
-            self.base_url = f'https://{self.base_url}'
+        self.base_url = base_url.rstrip("/")
+        if not self.base_url.startswith("http://") and not self.base_url.startswith("https://"):
+            self.base_url = f"https://{self.base_url}"
 
     def user_notes(
-            self,
-            user_id: SharkeyId,
-            with_channel_notes: bool = False,
-            with_renotes: bool = True,
-            with_files: bool = False,
-            with_replies: bool = False,
-            limit: conint(ge=0, le=100) = 10,
-            allow_partial: bool = False,
-            since_date: int|None = None,
-            until_date: int|None = None,
-            since_id: SharkeyId|None = None,
-            until_id: SharkeyId|None = None
+        self,
+        user_id: SharkeyId,
+        with_channel_notes: bool = False,
+        with_renotes: bool = True,
+        with_files: bool = False,
+        with_replies: bool = False,
+        limit: conint(ge=0, le=100) = 10,
+        allow_partial: bool = False,
+        since_date: int | None = None,
+        until_date: int | None = None,
+        since_id: SharkeyId | None = None,
+        until_id: SharkeyId | None = None,
     ) -> list[Post]:
         """
         This function returns the latest posts about a user.
@@ -70,7 +70,7 @@ class SharkeyServer:
             "withFiles": with_files,
             "withReplies": with_replies,
             "limit": limit,
-            "allowPartial": allow_partial
+            "allowPartial": allow_partial,
         }
         if since_date:
             payload["sinceDate"] = since_date
@@ -81,13 +81,14 @@ class SharkeyServer:
         if until_id:
             payload["untilId"] = until_id
 
-        response = requests.post(self.base_url + '/api/users/notes', json=payload)
+        response = requests.post(self.base_url + "/api/users/notes", json=payload)
 
         data = response.json()
 
         posts = []
         for post in data:
             from pprint import pprint
+
             pprint(dict_keys_to_snake_case(post))
             posts.append(Post.model_validate(dict_keys_to_snake_case(post)))
 

@@ -12,7 +12,7 @@ T = TypeVar("T")
 
 
 def to_snake_case(camel_case_str: str) -> str:
-    return ''.join(map(lambda e: '_' + e.lower() if e.isupper() else e, list(camel_case_str)))
+    return "".join(map(lambda e: "_" + e.lower() if e.isupper() else e, list(camel_case_str)))
 
 
 def dict_keys_to_snake_case(data: T) -> T:
