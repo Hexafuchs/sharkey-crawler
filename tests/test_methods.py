@@ -5,30 +5,36 @@
 """This is a sample python file for testing functions from the source code."""
 from __future__ import annotations
 
-from sharkey_crawler.main import hello_world
+from sharkey_crawler import SharkeyServer, Post
 
 
-def hello_test():
-    """
-    This defines the expected usage, which can then be used in various test cases.
-    Pytest will not execute this code directly, since the function does not contain the suffix "test"
-    """
-    hello_world()
+def crawl_notes_on_waldbewohner_eu(user: str) -> list[Post]:
+    return SharkeyServer('waldbewohner.eu').user_notes(
+        user,
+        allow_partial=True,
+        with_channel_notes=True,
+        with_renotes=False,
+        with_replies=False
+    )
 
 
-def test_hello(unit_test_mocks: None):
-    """
-    This is a simple test, which can use a mock to override online functionality.
-    unit_test_mocks: Fixture located in conftest.py, implicitly imported via pytest.
-    """
-    print("test_hello")
-    hello_test()
+def crawl_varia() -> list[Post]:
+    return crawl_notes_on_waldbewohner_eu('9vdsx5h21yqo003k')
 
 
-def test_int_hello():
+def crawl_cero() -> list[Post]:
+    return crawl_notes_on_waldbewohner_eu('9svsbjf77hmg007e')
+
+
+def crawl_yasu() -> list[Post]:
+    return crawl_notes_on_waldbewohner_eu('9st8kmrs7hmg0001')
+
+
+def test_can_crawl_users():
     """
-    This test is marked implicitly as an integration test because the name contains "_int_"
-    https://docs.pytest.org/en/6.2.x/example/markers.html#automatically-adding-markers-based-on-test-names
+    Tests if the users can be crawled without throwing an error.
     """
-    print("test_int_hello")
-    hello_test()
+    crawl_cero()
+    crawl_yasu()
+    crawl_varia()
+
