@@ -20,17 +20,17 @@ class UserLite(BaseModel):
     """Represents a user lite as returned by Sharkey."""
 
     id: SharkeyId
-    name: str|None = None
-    description: str|None = None
+    name: str | None = None
+    description: str | None = None
     username: str
-    host: str|None = None
-    created_at: datetime|None = None
-    avatar_url: str|None = None
-    avatar_blurhash: str|None = None
+    host: str | None = None
+    created_at: datetime | None = None
+    avatar_url: str | None = None
+    avatar_blurhash: str | None = None
     avatar_decorations: list[AvatarDecoration] = []
-    is_bot: bool|None = None
-    is_cat: bool|None = None
-    instance: Instance|None = None
+    is_bot: bool | None = None
+    is_cat: bool | None = None
+    instance: Instance | None = None
     emojis: dict[str, str] = {}
     online_status: OnlineStatus
     badge_roles: list[BadgeRole] = []
@@ -52,25 +52,25 @@ class OnlineStatus(str, Enum):
 
 class AvatarDecoration(BaseModel):
     id: SharkeyId
-    angle: float|int|None = None
-    flip_h: bool|None = None
+    angle: float | int | None = None
+    flip_h: bool | None = None
     url: str
-    offset_x: float|int|None = None
-    offset_y: float|int|None = None
+    offset_x: float | int | None = None
+    offset_y: float | int | None = None
 
 
 class Instance(BaseModel):
-    id: SharkeyId|None = None
-    name: str|None = None
-    software_name: str|None = None
-    software_version: str|None = None
-    icon_url: str|None = None
-    favicon_url: str|None = None
-    theme_color: str|None = None
+    id: SharkeyId | None = None
+    name: str | None = None
+    software_name: str | None = None
+    software_version: str | None = None
+    icon_url: str | None = None
+    favicon_url: str | None = None
+    theme_color: str | None = None
 
 
 class BadgeRole(BaseModel):
     name: str
-    icon_url: str|None = None
+    icon_url: str | None = None
     display_order: int
-    behavior: str|None = None
+    behavior: str | None = None
