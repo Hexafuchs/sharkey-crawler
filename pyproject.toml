@@ -99,7 +99,10 @@ exclude = [
     "packages",
     "pywin32",
     "tests",
-    "swagger_client"
+    "swagger_client",
+    ".github",
+    "venv",
+    "docs",
 ]
 ignore = [
     "E722",
