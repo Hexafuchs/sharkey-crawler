@@ -6,9 +6,9 @@
 
 from __future__ import annotations
 
-import requests
-
 from typing import Annotated
+
+import requests
 from annotated_types import Interval
 
 from .types import Post, SharkeyId

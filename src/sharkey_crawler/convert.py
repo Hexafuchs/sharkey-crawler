@@ -32,8 +32,8 @@ def dict_keys_to_snake_case(data: T) -> T:
     """
     if isinstance(data, list):
         # yes, we could to this in one line, but pyright does not like this
-        for i in range(len(data)):
-            data[i] = dict_keys_to_snake_case(data[i])
+        for i, element in enumerate(data):
+            data[i] = dict_keys_to_snake_case(element)
         return data
     if not isinstance(data, dict):
         return data
