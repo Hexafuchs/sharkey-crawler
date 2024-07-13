@@ -21,8 +21,6 @@ __all__ = ["Post", "Visibility", "DriveFile", "DriveFolder", "DriveFilePropertie
 class Post(BaseModel):
     """Represents a post as returned by Sharkey."""
 
-    model_config = ConfigDict(extra="forbid")
-
     id: SharkeyId
     created_at: datetime
     updated_at: datetime | None = None
