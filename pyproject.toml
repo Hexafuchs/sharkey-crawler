@@ -49,6 +49,7 @@ test = [
     "pytest-github-actions-annotate-failures",
     "shellcheck-py==0.10.0.1",
     "pyright",
+    "tox",
 ]
 dev = [
     "bpython",
@@ -145,20 +146,27 @@ markers = [
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py, integration, all
+envlist = pytest, pylint, pyright, flake8
 
-[testenv]
+[testenv:pytest]
+extras = test
 commands =
-    pytest -m "not integration" {posargs}
+    python -m pytest
 
-[testenv:integration]
+[testenv:pylint]
+extras = test
 commands =
-    pytest -m "integration" {posargs}
+    python -m pylint --rcfile=pyproject.toml src/
 
-[testenv:all]
-extras = all
+[testenv:pyright]
+extras = test
 commands =
-    pytest {posargs}
+    python -m pyright
+
+[testenv:flake8]
+extras = test
+commands =
+    python -m flake8 --toml-config=pyproject.toml
 """
 
 [tool.pylint]
