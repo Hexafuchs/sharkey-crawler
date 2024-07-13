@@ -56,6 +56,15 @@ Checkout the docstring for more usage information.
 
 ## Development
 
+### Installing flit
+
+```bash
+python3 -m venv venv
+./venv/bin/python -m pip install --upgrade pip
+./venv/bin/python -m pip install flit
+./venv/bin/flit install --only-deps --deps develop
+```
+
 ### Installing new dependencies
 
 Either add the dependency to the optional dependencies, or create a new dependency within the `[project]` namespace, e.g.:
