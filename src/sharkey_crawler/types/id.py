@@ -2,8 +2,12 @@
 #   Copyright (c) Hexafuchs. All rights reserved.
 #   Licensed under the MIT License. See LICENSE in project root for information.
 #   -------------------------------------------------------------
-"""This provides access to all types."""
+"""This defines types related to ids."""
+from __future__ import annotations
 
-from .id import *
-from .post import *
-from .user import *
+from typing import TypeAlias
+
+__all__ = ["SharkeyId"]
+
+"""The current representation of an ID in Sharkey."""
+SharkeyId: TypeAlias = str

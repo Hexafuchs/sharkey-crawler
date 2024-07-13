@@ -13,10 +13,9 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict
 
 from .user import UserLite
+from .id import SharkeyId
 
 __all__ = ["Post", "Visibility", "DriveFile", "DriveFolder", "DriveFileProperties", "Channel", "Poll", "PollChoice"]
-
-SharkeyId = str
 
 
 class Post(BaseModel):

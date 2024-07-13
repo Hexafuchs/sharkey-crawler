@@ -11,10 +11,9 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
+from .id import SharkeyId
+
 __all__ = ["UserLite", "OnlineStatus", "AvatarDecoration", "Instance", "BadgeRole"]
-
-
-SharkeyId = str
 
 
 class UserLite(BaseModel):

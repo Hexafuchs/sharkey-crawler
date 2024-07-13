@@ -72,7 +72,22 @@ Then, install dependencies with flit:
 
 ```bash
 ./venv/bin/flit install --only-deps --deps develop
+# or: ./venv/bin/flit install --only-deps --deps all
 ```
+
+## Future Development
+
+You might be asking yourself why this project does not expose more endpoints. It could, and it likely will, but 
+currently, the endpoints are not well documented and it takes a lot of effort to even add a single endpoint, which 
+Sharkey has a lot of. Since Sharkey is not very old and the future is still unclear, I will not take the effort it 
+takes to support more endpoints until I have a use case for it or I see great demand. If you want more endpoints, 
+there are two recommended solutions for this: 
+* open a discussion, so I and possibly other developers can see which endpoints are requested a lot of have an interesting use case
+  * also, vote for endpoints you want to see added in the future
+* contribute the endpoints yourself
+
+There might also be solutions to automate parts of the development like creating Pydantic classes. If you are interested 
+in this, feel free to contribute or open a discussion to organize this.
 
 ## Changelog
 
