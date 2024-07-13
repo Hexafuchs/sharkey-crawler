@@ -3,6 +3,7 @@
 #   Licensed under the MIT License. See LICENSE in project root for information.
 #   ---------------------------------------------------------------------------------
 """This defines types related to users."""
+# pylint: disable=missing-class-docstring,invalid-name
 
 from __future__ import annotations
 

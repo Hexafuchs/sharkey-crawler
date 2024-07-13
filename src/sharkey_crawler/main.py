@@ -46,6 +46,7 @@ class SharkeyServer:
         until_date: int | None = None,
         since_id: SharkeyId | None = None,
         until_id: SharkeyId | None = None,
+        timeout: int | float | None = 300,
     ) -> list[Post]:
         """
         This function returns the latest posts about a user.
@@ -70,6 +71,7 @@ class SharkeyServer:
             do not use with other `since_` or `until_` argument
         :param until_id: get posts before this id (and this id), expressed as milliseconds since epoch,
             do not use with other `since_` or `until_` argument
+        :param timeout: timeout of the request
         :returns: list of posts
         """
         payload = {
@@ -90,15 +92,12 @@ class SharkeyServer:
         if until_id:
             payload["untilId"] = until_id
 
-        response = requests.post(self.base_url + "/api/users/notes", json=payload)
+        response = requests.post(self.base_url + "/api/users/notes", json=payload, timeout=timeout)
 
         data = response.json()
 
         posts = []
         for post in data:
-            from pprint import pprint
-
-            pprint(dict_keys_to_snake_case(post))
             posts.append(Post.model_validate(dict_keys_to_snake_case(post)))
 
         return posts

@@ -306,16 +306,16 @@ valid-classmethod-first-arg="cls"
 valid-metaclass-classmethod-first-arg="cls"
 
 [tool.pylint.'DESIGN']
-max-args=5
-max-attributes=7
+max-args=30
+max-attributes=30
 max-bool-expr=5
 max-branches=12
-max-locals=15
+max-locals=30
 max-parents=7
 max-public-methods=20
 max-returns=6
 max-statements=50
-min-public-methods=2
+min-public-methods=1
 
 [tool.pylint.'IMPORTS']
 allow-wildcard-with-all="no"

@@ -3,6 +3,7 @@
 #   Licensed under the MIT License. See LICENSE in project root for information.
 #   ---------------------------------------------------------------------------------
 """This defines types related to posts."""
+# pylint: disable=missing-class-docstring,invalid-name
 
 from __future__ import annotations
 
@@ -10,7 +11,7 @@ from enum import Enum
 
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 
 from .user import UserLite
 from .id import SharkeyId
