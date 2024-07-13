@@ -5,7 +5,7 @@
 """Python library to crawl user data from sharkey instances"""
 from __future__ import annotations
 
-__version__ = "0.0.2"
+__version__ = "0.1.0"
 
 from .main import *
 from .types import *
