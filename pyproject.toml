@@ -117,12 +117,12 @@ exclude = [
     "**/node_modules",
     "**/__pycache__",
 ]
-venv = "env310"
+venv = "venv"
 
 reportMissingImports = true
 reportMissingTypeStubs = false
 
-pythonVersion = "3.10"
+pythonVersion = "3.12"
 pythonPlatform = "Linux"
 
 executionEnvironments = [
@@ -138,9 +138,6 @@ testpaths = "tests"
 junit_family = "xunit2"
 markers = [
     "integration: marks as integration test",
-    "notebooks: marks as notebook test",
-    "gpu: marks as gpu test",
-    "spark: marks tests which need Spark",
     "slow: marks tests as slow",
     "unit: fast offline tests",
 ]
@@ -148,43 +145,25 @@ markers = [
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py, integration, spark, all
+envlist = py, integration, all
 
 [testenv]
 commands =
-    pytest -m "not integration and not spark" {posargs}
+    pytest -m "not integration" {posargs}
 
 [testenv:integration]
 commands =
     pytest -m "integration" {posargs}
 
-[testenv:spark]
-extras = spark
-setenv =
-       PYSPARK_DRIVER_PYTHON = {envpython}
-       PYSPARK_PYTHON = {envpython}
-commands =
-    pytest -m "spark" {posargs}
-
 [testenv:all]
 extras = all
-setenv =
-       PYSPARK_DRIVER_PYTHON = {envpython}
-       PYSPARK_PYTHON = {envpython}
 commands =
     pytest {posargs}
 """
 
 [tool.pylint]
 extension-pkg-whitelist= [
-    "numpy",
-    "torch",
-    "cv2",
-    "pyodbc",
     "pydantic",
-    "ciso8601",
-    "netcdf4",
-    "scipy"
 ]
 ignore="CVS"
 ignore-patterns="test.*?py,conftest.py"
@@ -271,12 +250,12 @@ check-str-concat-over-line-jumps="no"
 
 [tool.pylint.'TYPECHECK']
 contextmanager-decorators="contextlib.contextmanager"
-generated-members="numpy.*,np.*,pyspark.sql.functions,collect_list"
+generated-members="collect_list"
 ignore-mixin-members="yes"
 ignore-none="yes"
 ignore-on-opaque-inference="yes"
-ignored-classes="optparse.Values,thread._local,_thread._local,numpy,torch,swagger_client"
-ignored-modules="numpy,torch,swagger_client,netCDF4,scipy"
+ignored-classes="optparse.Values,thread._local,_thread._local,swagger_client"
+ignored-modules="swagger_client"
 missing-member-hint="yes"
 missing-member-hint-distance=1
 missing-member-max-choices=1
