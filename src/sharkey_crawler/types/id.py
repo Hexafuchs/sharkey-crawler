@@ -5,9 +5,15 @@
 """This defines types related to ids."""
 from __future__ import annotations
 
-from typing import TypeAlias
+from sys import version_info
+
+if version_info[0] > 3 or version_info[1] >= 10:
+    from typing import TypeAlias
 
 __all__ = ["SharkeyId"]
 
-"""The current representation of an ID in Sharkey."""
-SharkeyId: TypeAlias = str
+if version_info[0] > 3 or version_info[1] >= 10:
+    """The current representation of an ID in Sharkey."""
+    SharkeyId: TypeAlias = str
+else:
+    SharkeyId = str
