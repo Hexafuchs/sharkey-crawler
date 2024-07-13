@@ -47,6 +47,7 @@ test = [
     "pytest==8.2.2",
     "pytest-github-actions-annotate-failures",
     "shellcheck-py==0.10.0.1",
+    "pyright",
 ]
 dev = [
     "bpython",
