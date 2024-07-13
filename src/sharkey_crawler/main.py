@@ -18,9 +18,9 @@ __all__ = ["SharkeyServer"]
 
 class SharkeyServer:
     """
-        Local representation of a sharkey server, exposes server api endpoints and parses data.
+    Local representation of a sharkey server, exposes server api endpoints and parses data.
 
-        If you require more endpoints, feel free to open a pull request or discussion.
+    If you require more endpoints, feel free to open a pull request or discussion.
     """
 
     def __init__(self, base_url: str):
@@ -29,9 +29,9 @@ class SharkeyServer:
         :returns: new sharkey proxy instance
         """
 
-        self.base_url = base_url.rstrip('/')
-        if not self.base_url.startswith('http://') and not self.base_url.startswith('https://'):
-            self.base_url = f'https://{self.base_url}'
+        self.base_url = base_url.rstrip("/")
+        if not self.base_url.startswith("http://") and not self.base_url.startswith("https://"):
+            self.base_url = f"https://{self.base_url}"
 
     def user_notes(
         self,

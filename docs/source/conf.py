@@ -73,13 +73,13 @@ napoleon_include_private_with_doc = True
 autodoc_typehints = "both"
 autodoc_class_signature = "mixed"
 autodoc_default_options = {
-    'members': True,
-    'member-order': 'bysource',
-    'special-members': '__init__',
-    'undoc-members': True,
-    'show-inheritance': True,
-    'autosummary': True,
+    "members": True,
+    "member-order": "bysource",
+    "special-members": "__init__",
+    "undoc-members": True,
+    "show-inheritance": True,
+    "autosummary": True,
 }
-autodoc_type_aliases = {'SharkeyId': 'SharkeyId'}
+autodoc_type_aliases = {"SharkeyId": "SharkeyId"}
 
 autosummary_generate = True
