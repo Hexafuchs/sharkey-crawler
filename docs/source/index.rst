@@ -7,10 +7,12 @@ Welcome to Sharkey Crawler's documentation!
 
    modules
 
+README
+======
+.. mdinclude:: ../../README.md
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`

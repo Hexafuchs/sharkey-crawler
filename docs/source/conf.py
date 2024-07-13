@@ -42,6 +42,7 @@ extensions = [
     "sphinx.ext.viewcode",  # Add links to highlighted source code
     "sphinx.ext.autosummary",
     "autodocsumm",
+    "sphinx_mdinclude",
     "sphinx.ext.githubpages",
 ]
 
@@ -83,3 +84,5 @@ autodoc_default_options = {
 autodoc_type_aliases = {"SharkeyId": "SharkeyId"}
 
 autosummary_generate = True
+
+md_parse_relative_links = True
