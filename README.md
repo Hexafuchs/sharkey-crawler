@@ -56,7 +56,7 @@ Checkout the docstring for more usage information.
 
 ## Development
 
-### Installing flit
+### Installing flit and development dependencies
 
 ```bash
 python3 -m venv venv
@@ -64,6 +64,23 @@ python3 -m venv venv
 ./venv/bin/python -m pip install flit
 ./venv/bin/flit install --only-deps --deps develop
 ```
+
+### Run linter
+
+```bash
+./venv/bin/tox
+```
+
+## Create documentation locally
+
+Make sure you have installed the dependencies.
+```
+cd docs
+make clean
+make html
+```
+
+> You can find the documentation under `docs/_build/html/index.html`
 
 ### Installing new dependencies
 
