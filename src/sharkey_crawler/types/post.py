@@ -99,7 +99,7 @@ class DriveFileProperties(BaseModel):
     width: int | float
     height: int | float
     orientation: int | float | None = None
-    avg_color: str = None
+    avg_color: str | None = None
 
 
 class Channel(BaseModel):

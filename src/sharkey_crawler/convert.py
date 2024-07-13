@@ -31,7 +31,16 @@ def dict_keys_to_snake_case(data: T) -> T:
     :return: all keys turned into snake case
     """
     if isinstance(data, list):
-        return [dict_keys_to_snake_case(e) for e in data]
-    if isinstance(data, dict):
+        # yes, we could to this in one line, but pyright does not like this
+        for i in range(len(data)):
+            data[i] = dict_keys_to_snake_case(data[i])
         return data
-    return {to_snake_case(key): dict_keys_to_snake_case(value) for key, value in data.items()}
+    if not isinstance(data, dict):
+        return data
+
+    # yes, we could to this in one line as well, but pyright does not like this either
+    for key in list(data.keys()):
+        cache = data[key]
+        del data[key]
+        data[to_snake_case(key)] = dict_keys_to_snake_case(cache)
+    return data

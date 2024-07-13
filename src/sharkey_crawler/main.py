@@ -8,7 +8,8 @@ from __future__ import annotations
 
 import requests
 
-from pydantic import conint
+from typing import Annotated
+from annotated_types import Interval
 
 from .types import Post, SharkeyId
 from .convert import dict_keys_to_snake_case
@@ -33,6 +34,7 @@ class SharkeyServer:
         if not self.base_url.startswith("http://") and not self.base_url.startswith("https://"):
             self.base_url = f"https://{self.base_url}"
 
+    # noinspection PyTypeHints
     def user_notes(
         self,
         user_id: SharkeyId,
@@ -40,7 +42,7 @@ class SharkeyServer:
         with_renotes: bool = True,
         with_files: bool = False,
         with_replies: bool = False,
-        limit: conint(ge=0, le=100) = 10,
+        limit: Annotated[int, Interval(ge=0, le=100)] = 10,
         allow_partial: bool = False,
         since_date: int | None = None,
         until_date: int | None = None,
