@@ -100,8 +100,8 @@ in this, feel free to contribute or open a discussion to organize this.
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](https://github.com/Hexafuchs/sharkey-crawler/blob/main/CHANGELOG.md) for more information on what has changed recently.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/Hexafuchs/sharkey-crawler/blob/main/LICENSE.md) for more information.
