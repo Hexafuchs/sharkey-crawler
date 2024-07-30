@@ -18,6 +18,8 @@ poetry add sharkey-crawler
 
 ## Usage
 
+You can find the documentation at [https://hexafuchs.github.io/sharkey-crawler/](https://hexafuchs.github.io/sharkey-crawler/)
+
 ```python
 from sharkey_crawler import SharkeyServer
 
@@ -36,7 +38,7 @@ SharkeyServer('example.org').user_notes(
 )
 ```
 
-Checkout the docstring for more usage information.
+Checkout the docstring or the [docs](https://hexafuchs.github.io/sharkey-crawler/) for more usage information.
 
 ## Testing
 
