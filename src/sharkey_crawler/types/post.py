@@ -96,8 +96,8 @@ class DriveFolder(BaseModel):
 
 
 class DriveFileProperties(BaseModel):
-    width: int | float
-    height: int | float
+    width: int | float | None = None
+    height: int | float | None = None
     orientation: int | float | None = None
     avg_color: str | None = None
 
