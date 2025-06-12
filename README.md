@@ -1,3 +1,5 @@
+# Moved to https://codeberg.org/Hexafuchs/sharkey-crawler
+
 # Python library to crawl user notes from sharkey instances
 
 [![Latest Version on PyPI](https://img.shields.io/pypi/pyversions/sharkey-crawler?style=flat-square)](https://pypi.org/project/sharkey-crawler)
